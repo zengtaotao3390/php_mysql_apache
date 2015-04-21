@@ -1,0 +1,39 @@
+<html>
+		<head>
+			<title>my page </title>
+					
+		</head>
+		<body>
+			<form action="baidu.php" method="post" >
+				<div align="center">
+					<input name="wd" type="text" />
+					<br/>
+					<select name="education[]" id="education" size="5" multiple="multiple">
+         		<option value="1">小学</option>
+         		<option value="2">初中</option>
+         		<option value="3">高中</option>
+         		<option value="4">中专</option>
+         		<option value="5">大专</option>
+         		<option value="6">本科</option>
+         		<option value="7">研究生</option>
+         		<option value="8">博士</option>
+         		<option value="9">博士后</option>
+        	 	<option selected>请选择</option>
+					</select>
+					<br>
+					<input type="radio" name="radiobutton" value="a" checked> 喜欢
+					<input type="radio" name="radiobutton" value="b"> 不喜欢
+					<input type="radio" name="radiobutton" value="c"> 无所谓
+					<br>
+					
+					<input type="checkbox" name="checkbox[]" value="z"> 跑步
+					<input type="checkbox" name="checkbox[]" value="x"> 打球
+					<input type="checkbox" name="checkbox[]" value="c"> 登山
+					<input type="checkbox" name="checkbox[]" value="v"> 健美<br>
+					<input type="submit" name="fake baidu" value="fake baidu">
+				
+					</div>
+				</form>
+			
+		</body>
+</html>
