@@ -1,0 +1,56 @@
+<?php
+/**
+ *
+ * User: peach
+ * Date: 2015/5/6
+ * Time: 20:47
+ */
+session_start();
+
+define("USER", "peach");
+define("PASS", "peach");
+
+if(isset($_POST["user"]) && isset($_POST["pass"]))
+{
+    if($_POST["user"] == USER && $_POST["pass"] == PASS){
+        $_SESSION["authenticated"] = TRUE;
+        $host = $_SERVER["HTTP_HOST"];
+        $path = rtrim(dirname($_SERvER["PHP_SELF"]), "/\\");
+        header("Location: http://$host$path/home.php");
+        exit;
+    }
+}
+?>
+
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+<?php
+if(count($_POST) > 0 ){
+    echo "INVALID LOGIN";
+}
+?>
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" >
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td><input name="user" type="text" value="<?php if(isset($_POST['user'])) echo $_POST['user']; ?>" /></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input name="pass" type="password" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="login" /></td>
+        </tr>
+    </table>
+
+</form>
+</body>
+</html>
